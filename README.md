@@ -1,5 +1,6 @@
 # ci-script
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/WindomZ/ci-script.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/WindomZ/ci-script.svg?branch=master)](https://travis-ci.org/WindomZ/ci-script)
 [![Dependency](https://david-dm.org/WindomZ/ci-script.svg)](https://david-dm.org/WindomZ/ci-script)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
