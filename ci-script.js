@@ -2,11 +2,11 @@
 /**
  * Created by WindomZ on 17-7-3.
  */
-"use strict";
+'use strict';
 
-const os = require("os");
+const os = require('os');
 
-const shell = require("./shell");
+const shell = require('./shell');
 
 function outputHelp() {
   process.stdout.write(`
@@ -21,15 +21,15 @@ function outputHelp() {
 }
 
 function outputVersion() {
-  process.stdout.write(require("./package.json").version + os.EOL);
+  process.stdout.write(require('./package.json').version + os.EOL);
 }
 
 function outputExec(dir) {
-  process.stdout.write(">>> ci-script start..." + os.EOL);
+  process.stdout.write('>>> ci-script start...' + os.EOL);
   shell
     .exec(dir)
     .then(() => {
-      process.stdout.write(">>> ci-script complete!" + os.EOL);
+      process.stdout.write('>>> ci-script complete!' + os.EOL);
     })
     .catch(e => {
       console.error(e.message);
@@ -54,7 +54,7 @@ argv.every(arg => {
     outputHelp();
     noArgs = false;
     return false;
-  } else if (!arg.startsWith("-")) {
+  } else if (!arg.startsWith('-')) {
     outputExec(arg);
     noArgs = false;
     return false;

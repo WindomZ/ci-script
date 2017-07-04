@@ -1,11 +1,11 @@
 /**
  * Created by WindomZ on 17-7-3.
  */
-"use strict";
+'use strict';
 
-const shell = require("shelljs");
+const shell = require('shelljs');
 
-const loader = require("./loader");
+const loader = require('./loader');
 
 function execScripts(scripts) {
   if (scripts && scripts.length > 0) {
