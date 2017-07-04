@@ -41,4 +41,13 @@ test('shell pass', async t => {
     .catch(() => {
       t.pass();
     });
+
+  await shell
+    .exec('tests/config')
+    .then(() => {
+      t.pass();
+    })
+    .catch(e => {
+      t.fail(e);
+    });
 });
