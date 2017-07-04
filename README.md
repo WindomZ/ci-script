@@ -31,7 +31,7 @@ npm install -g ci-script
 ```bash
 $ ci-script -h
 
-  Usage: ci-script [options] [dir]
+  Usage: ci-script [options] [directory]
 
   Execute the CI script.
 
