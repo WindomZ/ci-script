@@ -8,10 +8,14 @@ const path = require('path');
 
 const yaml = require('js-yaml');
 
-function loadSyncTravis(dir) {
-  let filePath = path.join(path.resolve(dir || process.cwd()), '.travis.yml');
-  fs.accessSync(filePath, fs.R_OK);
-
+function loadScripts(dir) {
+  dir = path.resolve(dir || process.cwd());
+  let filePath = path.join(dir, '.ciscript.yml');
+  try {
+    fs.accessSync(filePath, fs.R_OK);
+  } catch (e) {
+    filePath = path.join(dir, '.travis.yml');
+  }
   let doc = yaml.safeLoad(fs.readFileSync(filePath, 'utf8'));
   if (doc.script && Array.isArray(doc.script)) {
     return doc.script;
@@ -20,11 +24,11 @@ function loadSyncTravis(dir) {
 }
 
 function loadSync(dir) {
-  return loadSyncTravis(dir);
+  return loadScripts(dir);
 }
 
 function* load(dir) {
-  return yield loadSyncTravis(dir);
+  return yield loadScripts(dir);
 }
 
 module.exports.load = dir =>
