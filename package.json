@@ -1,7 +1,7 @@
 {
   "name": "ci-script",
-  "version": "1.0.0",
-  "description": "Just execute the CI script.",
+  "version": "1.0.1",
+  "description": "Just execute the CI scripts.",
   "preferGlobal": true,
   "main": "index.js",
   "bin": {
