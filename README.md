@@ -17,7 +17,8 @@
 ## Features
 
 - [x] _cli_ - Command line interface.
-- [x] _travis_ - Automatically loads `.travis.yml` file and executes the inside `scripts`.
+- [x] _travis_ - Automatically loads `.travis.yml` file and executes the inside `script`.
+- [x] _custom_ - Higher priority custom `.ciscript.yml` file, optional.
 
 ## Install
 
@@ -30,7 +31,7 @@ npm install -g ci-script
 ```bash
 $ ci-script -h
 
-  Usage: ci-script [options] [dir]
+  Usage: ci-script [options] [directory]
 
   Execute the CI script.
 
@@ -38,6 +39,21 @@ $ ci-script -h
     -h, --help, help            output usage information
     -v, -V, --version, version  output the version number
 ```
+
+## Configuration
+
+If you need to customize the `.ciscript.yml` file, the rules configured like this: 
+```yaml
+script:
+  # commands are written in order.
+  - echo "One"
+  - echo "Two"
+  - echo "Three"
+```
+
+can also copy the `script` in the `.travis.yml` file, then customize it.
+
+> Note: `.ciscript.yml` is optional.
 
 ## Example
 

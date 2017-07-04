@@ -10,7 +10,7 @@ const shell = require('./shell');
 
 function outputHelp() {
   process.stdout.write(`
-  Usage: ci-script [options] [dir]
+  Usage: ci-script [options] [directory]
 
   Execute the CI scripts.
 

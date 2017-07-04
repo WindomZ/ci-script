@@ -53,4 +53,14 @@ test('loader pass', async t => {
     .catch(e => {
       t.fail(e);
     });
+
+  await loader
+    .load('tests/config')
+    .then(r => {
+      t.not(r, []);
+      t.pass();
+    })
+    .catch(e => {
+      t.fail(e);
+    });
 });
