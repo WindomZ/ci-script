@@ -1,18 +1,18 @@
 /**
  * Created by WindomZ on 17-7-3.
  */
-"use strict";
+'use strict';
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const yaml = require("js-yaml");
+const yaml = require('js-yaml');
 
 function loadSyncTravis(dir) {
-  let filePath = path.join(path.resolve(dir || process.cwd()), ".travis.yml");
+  let filePath = path.join(path.resolve(dir || process.cwd()), '.travis.yml');
   fs.accessSync(filePath, fs.R_OK);
 
-  let doc = yaml.safeLoad(fs.readFileSync(filePath, "utf8"));
+  let doc = yaml.safeLoad(fs.readFileSync(filePath, 'utf8'));
   if (doc.script && Array.isArray(doc.script)) {
     return doc.script;
   }

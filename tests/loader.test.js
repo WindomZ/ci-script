@@ -1,15 +1,15 @@
 /**
  * Created by WindomZ on 17-7-3.
  */
-"use strict";
+'use strict';
 
-const test = require("ava");
+const test = require('ava');
 
-const loader = require("../loader");
+const loader = require('../loader');
 
-test("loader pass", async t => {
+test('loader pass', async t => {
   try {
-    loader.loadSync("tests");
+    loader.loadSync('tests');
   } catch (e) {
     console.error(e);
     t.fail(e);
@@ -26,16 +26,16 @@ test("loader pass", async t => {
     });
 
   await loader
-    .load("test")
+    .load('test')
     .then(() => {
-      t.fail("Should be error!");
+      t.fail('Should be error!');
     })
     .catch(() => {
       t.pass();
     });
 
   await loader
-    .load("tests")
+    .load('tests')
     .then(r => {
       t.not(r, []);
       t.pass();
@@ -45,7 +45,7 @@ test("loader pass", async t => {
     });
 
   await loader
-    .load("tests/empty")
+    .load('tests/empty')
     .then(r => {
       t.not(r, []);
       t.pass();

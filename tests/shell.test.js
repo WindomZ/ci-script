@@ -1,22 +1,22 @@
 /**
  * Created by WindomZ on 17-7-3.
  */
-"use strict";
+'use strict';
 
-const test = require("ava");
+const test = require('ava');
 
-const shell = require("../shell");
+const shell = require('../shell');
 
-test("shell pass", async t => {
+test('shell pass', async t => {
   try {
-    shell.execSync("tests");
+    shell.execSync('tests');
   } catch (e) {
     console.error(e);
     t.fail(e);
   }
 
   await shell
-    .exec("tests")
+    .exec('tests')
     .then(() => {
       t.pass();
     })
@@ -25,7 +25,7 @@ test("shell pass", async t => {
     });
 
   await shell
-    .exec("tests/empty")
+    .exec('tests/empty')
     .then(() => {
       t.pass();
     })
@@ -34,9 +34,9 @@ test("shell pass", async t => {
     });
 
   await shell
-    .exec("tests/wrong")
+    .exec('tests/wrong')
     .then(() => {
-      t.fail("Should be error!");
+      t.fail('Should be error!');
     })
     .catch(() => {
       t.pass();
