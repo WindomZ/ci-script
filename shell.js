@@ -8,14 +8,15 @@ const shell = require("shelljs");
 const loader = require("./loader");
 
 function execScripts(scripts) {
-  scripts = scripts || [];
-  scripts.every(script => {
-    if (script && shell.exec(script).code !== 0) {
-      throw new EvalError('Error: Fail to execute "' + script + '"!');
-    }
+  if (scripts && scripts.length > 0) {
+    scripts.every(script => {
+      if (script && shell.exec(script).code !== 0) {
+        throw new EvalError('Error: Fail to execute "' + script + '"!');
+      }
 
-    return true;
-  });
+      return true;
+    });
+  }
 }
 
 function execSync(dir) {
