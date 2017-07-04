@@ -2,11 +2,12 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/WindomZ/ci-script.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/WindomZ/ci-script.svg?branch=master)](https://travis-ci.org/WindomZ/ci-script)
+[![Coverage Status](https://coveralls.io/repos/github/WindomZ/ci-script/badge.svg?branch=master)](https://coveralls.io/github/WindomZ/ci-script?branch=master)
 [![Dependency](https://david-dm.org/WindomZ/ci-script.svg)](https://david-dm.org/WindomZ/ci-script)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-> Just execute the CI script.
+> Just execute the CI scripts.
 
 [![NPM](https://nodei.co/npm/ci-script.png)](https://nodei.co/npm/ci-script/)
 
@@ -15,8 +16,8 @@
 
 ## Features
 
+- [x] _cli_ - Command line interface.
 - [x] _travis_ - Automatically loads `.travis.yml` file and executes the inside `scripts`.
-- [x] _CLI_ - Command line interface.
 
 ## Install
 
@@ -49,7 +50,7 @@ ci-script ~/tests  # working in the `~/tests/` directory.
 ## Environment
 
 - linux CI pass
-- osx CI pass
+- macOS CI pass
 - windows Not yet tested
 
 ## Contributing
