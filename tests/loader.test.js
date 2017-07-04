@@ -16,7 +16,36 @@ test("loader pass", async t => {
   }
 
   await loader
+    .load()
+    .then(r => {
+      t.not(r, []);
+      t.pass();
+    })
+    .catch(e => {
+      t.fail(e);
+    });
+
+  await loader
+    .load("test")
+    .then(() => {
+      t.fail("Should be error!");
+    })
+    .catch(() => {
+      t.pass();
+    });
+
+  await loader
     .load("tests")
+    .then(r => {
+      t.not(r, []);
+      t.pass();
+    })
+    .catch(e => {
+      t.fail(e);
+    });
+
+  await loader
+    .load("tests/empty")
     .then(r => {
       t.not(r, []);
       t.pass();

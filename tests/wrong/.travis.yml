@@ -1,0 +1,21 @@
+language: node_js
+sudo: false
+
+os:
+  - linux
+  - osx
+
+node_js:
+  - '6.0'
+  - '8.1'
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+script:
+  - echoxx $nothing
+
+after_success:
+    - './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
