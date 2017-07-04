@@ -3,7 +3,7 @@
  */
 "use strict";
 
-const exec = require("./exec");
+const shell = require("./shell");
 
-module.exports = exec.exec;
-module.exports.execSync = exec.execSync;
+module.exports = shell.exec;
+module.exports.execSync = shell.execSync;

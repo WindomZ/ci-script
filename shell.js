@@ -7,7 +7,7 @@ const shell = require("shelljs");
 
 const loader = require("./loader");
 
-function execScripts(scripts = []) {
+function execScripts(scripts) {
   scripts = scripts || [];
   scripts.every(script => {
     if (script && shell.exec(script).code !== 0) {

@@ -6,13 +6,13 @@
 
 const os = require("os");
 
-const exec = require("./exec");
+const shell = require("./shell");
 
 function outputHelp() {
   process.stdout.write(`
   Usage: ci-script [options] [dir]
 
-  Execute the CI script.
+  Execute the CI scripts.
 
   Options:
     -h, --help, help            output usage information
@@ -26,7 +26,7 @@ function outputVersion() {
 
 function outputExec(dir) {
   process.stdout.write(">>> ci-script start..." + os.EOL);
-  exec
+  shell
     .exec(dir)
     .then(() => {
       process.stdout.write(">>> ci-script complete!" + os.EOL);
