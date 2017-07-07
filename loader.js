@@ -17,8 +17,11 @@ function loadScripts(dir) {
     filePath = path.join(dir, '.travis.yml');
   }
   let doc = yaml.safeLoad(fs.readFileSync(filePath, 'utf8'));
-  if (doc.script && Array.isArray(doc.script)) {
-    return doc.script;
+  if (doc.script) {
+    if (Array.isArray(doc.script)) {
+      return doc.script;
+    }
+    return [doc.script];
   }
   return [];
 }
