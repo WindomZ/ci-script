@@ -50,4 +50,13 @@ test('shell pass', async t => {
     .catch(e => {
       t.fail(e);
     });
+
+  await shell
+    .exec('tests/single')
+    .then(() => {
+      t.pass();
+    })
+    .catch(e => {
+      t.fail(e);
+    });
 });
