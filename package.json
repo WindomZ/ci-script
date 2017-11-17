@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/WindomZ/ci-script#readme",
   "dependencies": {
+    "caporal": "^0.8.0",
     "js-yaml": "^3.8.4",
     "shelljs": "^0.7.8"
   },
