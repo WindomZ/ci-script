@@ -6,25 +6,17 @@
 
 const os = require('os');
 
+const prog = require('caporal');
+
+const init = require('./init');
 const shell = require('./shell');
 
-function outputHelp() {
-  process.stdout.write(`
-  Usage: ci-script [options] [directory]
+const pkg = require('./package.json');
+prog.version(pkg.version).description(pkg.description);
 
-  Execute the CI scripts.
+prog.argument('[directory]', 'The workspace directory').action((argv, opts) => {
+  let dir = argv['directory'] || '';
 
-  Options:
-    -h, --help, help            output usage information
-    -v, -V, --version, version  output the version number
-`);
-}
-
-function outputVersion() {
-  process.stdout.write(require('./package.json').version + os.EOL);
-}
-
-function outputExec(dir) {
   process.stdout.write('>>> ci-script start...' + os.EOL);
   shell
     .exec(dir)
@@ -34,34 +26,23 @@ function outputExec(dir) {
     .catch(e => {
       console.error(e.message);
     });
-}
-
-let argv = process.argv.slice(2);
-
-if (argv.length === 0) {
-  outputExec();
-  return;
-}
-
-let noArgs = true;
-
-argv.every(arg => {
-  if (arg.match(/^(-v|--version|version)$/i)) {
-    outputVersion();
-    noArgs = false;
-    return false;
-  } else if (arg.match(/^(-h|--help|help)$/i)) {
-    outputHelp();
-    noArgs = false;
-    return false;
-  } else if (!arg.startsWith('-')) {
-    outputExec(arg);
-    noArgs = false;
-    return false;
-  }
-  return true;
 });
 
-if (noArgs) {
-  outputHelp();
-}
+prog
+  .command('init', 'init...')
+  .argument('[directory]', 'The workspace directory', prog.STRING)
+  .action((argv, opts) => {
+    let dir = argv['directory'] || '';
+
+    process.stdout.write('>>> ci-script init start...' + os.EOL);
+    init
+      .initConfig(dir)
+      .then(() => {
+        process.stdout.write('>>> ci-script init complete!' + os.EOL);
+      })
+      .catch(e => {
+        console.error(e.message);
+      });
+  });
+
+prog.parse(process.argv);
