@@ -6,6 +6,7 @@
 [![Dependency](https://david-dm.org/WindomZ/ci-script.svg)](https://david-dm.org/WindomZ/ci-script)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FWindomZ%2Fci-script.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FWindomZ%2Fci-script?ref=badge_shield)
 
 > Just execute the CI scripts.
 
@@ -79,3 +80,6 @@ If you like it then you can put a :star: on it.
 ## License
 
 [MIT](https://github.com/WindomZ/ci-script/blob/master/LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FWindomZ%2Fci-script.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FWindomZ%2Fci-script?ref=badge_large)
