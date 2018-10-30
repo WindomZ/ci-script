@@ -7,6 +7,9 @@
   "bin": {
     "ci-script": "ci-script.js"
   },
+  "engines": {
+    "node": ">=8.6.0"
+  },
   "scripts": {
     "precommit": "lint-staged",
     "test": "nyc --reporter=lcov --reporter=text-lcov ava"
