@@ -14,7 +14,7 @@ const shell = require('./shell');
 const pkg = require('./package.json');
 prog.version(pkg.version).description(pkg.description);
 
-prog.argument('[directory]', 'The workspace directory').action((argv, opts) => {
+prog.argument('[directory]', 'The workspace directory').action(argv => {
   let dir = argv['directory'] || '';
 
   process.stdout.write('>>> ci-script start...' + os.EOL);
@@ -24,14 +24,14 @@ prog.argument('[directory]', 'The workspace directory').action((argv, opts) => {
       process.stdout.write('>>> ci-script complete!' + os.EOL);
     })
     .catch(e => {
-      console.error(e.message);
+      process.stderr.write(e.message);
     });
 });
 
 prog
   .command('init', 'init...')
   .argument('[directory]', 'The workspace directory', prog.STRING)
-  .action((argv, opts) => {
+  .action(argv => {
     let dir = argv['directory'] || '';
 
     process.stdout.write('>>> ci-script init start...' + os.EOL);
@@ -41,7 +41,7 @@ prog
         process.stdout.write('>>> ci-script init complete!' + os.EOL);
       })
       .catch(e => {
-        console.error(e.message);
+        process.stderr.write(e.message);
       });
   });
 
