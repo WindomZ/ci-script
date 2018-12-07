@@ -81,5 +81,4 @@ If you like it then you can put a :star: on it.
 
 [MIT](https://github.com/WindomZ/ci-script/blob/master/LICENSE)
 
-
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FWindomZ%2Fci-script.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FWindomZ%2Fci-script?ref=badge_large)
